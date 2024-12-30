@@ -1,0 +1,194 @@
+/* إعدادات أساسية للصفحة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('b.jpg'); /* ضع مسار الصورة هنا */
+    background-size: cover; /* تجعل الصورة تغطي كامل الشاشة */
+    background-position: center center; /* تجعل الصورة في المنتصف */
+    background-attachment: fixed; /* تجعل الخلفية ثابتة عند التمرير */
+    background-repeat: no-repeat; /* لا يتم تكرار الصورة */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh; /* تأكد من تغطية كامل ارتفاع الشاشة */
+}
+
+/* تنسيق الحاوية الرئيسية */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* تنسيق العنوان الرئيسي */
+header h1 {
+    text-align: center;
+    color: #ffbed7; /* لون وردي مميز */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* تنسيق قسم الصور */
+.photos h2 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* تنسيق المعرض الصور */
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* لضمان ترتيب الصور بشكل جيد على الشاشات الصغيرة */
+}
+
+.image-gallery img {
+    width: 30%;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    object-fit: cover; /* تأكد من أن الصورة تغطي المساحة بشكل جيد */
+}
+
+/* تأثير عند التمرير على الصور */
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* تنسيق النص في قسم الرسالة */
+.message {
+    background-color: #ffd2e9; /* لون وردي فاتح */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message p {
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* تنسيق التذييل */
+footer {
+    text-align: center;
+    font-size: 18px;
+    color: #a671fc;
+    margin-top: 30px;
+}
+
+/* حاوية الأزرار */
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* تنسيق الأزرار */
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق زر "نعم" */
+.yes {
+    background-color: #ffd2e9; /* أخضر */
+}
+
+.yes:hover {
+    background-color: #e5383500;
+    transform: translateY(-5px); /* تأثير عند التمرير */
+}
+
+/* تنسيق زر "لا" */
+.no {
+    background-color: #ffadd2; /* أحمر */
+}
+
+.no:hover {
+    background-color: #e5383500;
+    transform: translateY(-5px); /* تأثير عند التمرير */
+}
+
+/* إزالة الخط الأزرق عند الضغط */
+a {
+    text-decoration: none;
+}
+
+/* بالنسبة للشاشات الصغيرة (الهاتف المحمول) */
+@media only screen and (max-width: 768px) {
+    body {
+        background-size: cover; /* تغطي الخلفية بشكل مناسب للهاتف */
+        background-position: center center; /* تأكد من أن الصورة في المنتصف */
+        background-attachment: scroll; /* يتم التمرير بشكل طبيعي */
+    }
+
+    /* تحسين عرض الصور على الشاشات الصغيرة */
+    .image-gallery img {
+        width: 70%; /* عرض الصورة 70% من عرض الشاشة */
+        margin-bottom: 15px; /* إضافة مسافة صغيرة بين الصور */
+    }
+
+    /* تحسين توزيع الصور */
+    .image-gallery {
+        justify-content: center; /* جعل الصور تتوزع بشكل مركزي */
+    }
+
+    header h1 {
+        font-size: 28px;
+         /* تصغير حجم العنوان على الشاشات الصغيرة */
+    }
+
+    .photos h2 {
+        font-size: 24px; /* تصغير حجم النص في العناوين */
+    }
+
+    .message p {
+        font-size: 16px; /* تصغير حجم النص في الرسالة */
+    }
+
+    button {
+        font-size: 18px; /* تصغير حجم الأزرار */
+    }
+}
+
+/* بالنسبة للأجهزة اللوحية أو الشاشات الأكبر */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .image-gallery img {
+        width: 45%; /* عرض الصور بشكل مناسب للأجهزة اللوحية */
+    }
+
+    header h1 {
+        font-size: 32px; /* حجم العنوان */
+    }
+
+    .photos h2 {
+        font-size: 26px; /* حجم النص في العناوين */
+    }
+
+    button {
+        font-size: 18px; /* حجم الأزرار */
+    }
+}
+
+/* إذا كنت تريد أن تتغير الصورة على شاشات كبيرة (اختياري) */
+@media only screen and (min-width: 1200px) {
+    .image-gallery img {
+        width: 30%; /* عرض الصور بشكل مناسب للأجهزة الكبيرة */
+    }
+}
